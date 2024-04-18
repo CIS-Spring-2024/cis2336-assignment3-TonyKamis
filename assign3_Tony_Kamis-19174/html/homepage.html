@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Suave Cafe</title>
+    <link rel="stylesheet" href="../css/slider.css">
+    <script src="../javascript/map.js"></script>
+
+    
+    <style>
+        body {
+            background-size: cover;
+            background-color: light gainsboro;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        header {
+            background-color: #e6240e;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            margin: 0;
+        }
+
+        .menu-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 40%
+        }
+
+        #lunches p {
+            margin-bottom: 10px;
+        }
+
+        .menu-box p {
+            margin: 0;
+        }
+
+        #h1 {
+            color: #ddd;
+        }
+
+        footer {
+            background-color: #333;
+            padding: 2px;
+            text-align: center;
+			margin-top: auto;
+        }
+
+        .menu-image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Suave Cafe!</h1>
+    </header>
+    <div class="topnav">
+        <a href="homepage.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="#">Nutrition and Wellness</a>
+        <a href="#">Orders</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+    </div>
+
+
+    <h1 style="text-align: center; color: red;">This Week Lunch Specials!</h1>
+    <div class="menu-image-container">
+        <div class="menu-box">
+            <div id="lunches"></div>
+        </div>
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="../images/bakedpotato.jpg" alt="Baked Potato Picture">
+                <img id="slide-2" src="../images/teryaki.jpg" alt="Chicken Teriyaki with rice">
+                <img id="slide-3" src="../images/nacho.jpg" alt="Nacho Cheese Platter">
+                <img id="slide-4" src="../images/BBQ sandwich.jpg" alt="BBQ Chicken Sandwich with fries">
+                <img id="slide-5" src="../images/grilled chicken.jpg" alt="Grilled Salmon and Rice">
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+                <a href="#slide-5"></a>
+            </div>
+        </div>
+    </div>
+                <p class="slider-caption">Slide through the photos to see your lunch schedule for the week!</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+            const lunches = {
+                'Monday': 'Baked Potato with Cheese, with a side of Caesar Salad',
+                'Tuesday': 'Chicken Teriyaki and Rice, with a side of Egg Rolls',
+                'Wednesday': 'Nacho Cheese Platter with Chips and Beef, with a side of Refried Beans',
+                'Thursday': 'BBQ Chicken Sandwich, with a side of fries',
+                'Friday': 'Grilled Salmon, with a side of white rice'
+            };
+
+            const lunchContainer = document.getElementById('lunches');
+            let lunchHtml = '<ul>';
+
+            week.forEach(day => {
+                lunchHtml += `<li>${day}: ${lunches[day]}</li>`;
+            });
+
+            lunchHtml += '</ul>';
+            lunchContainer.innerHTML = lunchHtml;
+        });
+    </script>
+    
+    <div class="container">
+        <div id="map" style="padding: 20px;">
+            <h1>Find Suave Cafe Here!</h1>
+            <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6536.625349665324!2d-95.65420325492781!3d29.576158523580105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2e2962848a61%3A0xa38c5abd5632d00f!2sUniversity%20of%20Houston%20at%20Sugar%20Land!5e0!3m2!1sen!2sus!4v1712610392658!5m2!1sen!2sus" alt= "Map of Sugarland University" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+        </div>
+        <div id="events">
+            <h1>Upcoming Promotions and Events</h1>
+        </div>
+    </div>
+    <script src="../javascript/map.js"></script>
+    <footer>
+        <p>2024 Suave Cafe. All rights reserved.</p>
+        <p>Contact us at info@suavecafe.com</p>
+    </footer> 
+    
+</body>
+</html>
