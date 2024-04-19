@@ -223,7 +223,7 @@ body {
   }
   /* sidebar for carttt */ 
   .sidebar {
-    width: 300px;
+    width: 250px;
     height: 100%;
     position: fixed;
     top: 0;
@@ -249,7 +249,7 @@ body {
     margin-top: 40px;
 }
 
-.cart-tems{
+.cart-items{
     display: flex;
     flex-direction: column;
     gap:10px;
